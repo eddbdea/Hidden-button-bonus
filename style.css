@@ -1,0 +1,12 @@
+.game-button {
+    background-color: aqua;
+    color: black;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.generate {
+    background-color: #008000 ;
+    color: rgb(0, 0, 0);
+}
