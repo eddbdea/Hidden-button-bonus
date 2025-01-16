@@ -3,33 +3,32 @@ function randomNumberInt(min, max) {
 }
  
 function generateButtons() {
-    const buttonValue = document.getElementById('buttonCount').value
-    const container = document.getElementById('buttonsContainer')
-    container.innerHTML = ''
-    const winnerNumber = randomNumberInt(1, buttonValue)
-    console.log(winnerNumber)
+    const buttonValue = document.getElementById('buttonCount').value;
+    const container = document.getElementById('buttonsContainer');
+    container.innerHTML = '';
+    const winnerNumber = randomNumberInt(1, buttonValue);
 
     if (buttonValue >= 1) {
         for(let i = 1; i <= buttonValue; ++i) {
-            let button = document.createElement('button')
-            button.innerText = 'Button number ' + i
-            button.classList.add('game-button')
+            let button = document.createElement('button');
+            button.innerText = 'Button number ' + i;
+            button.classList.add('game-button');
             if (i == winnerNumber) {
-                button.addEventListener('click', showWinnerMessage)
+                button.addEventListener('click', showWinnerMessage);
             } else {
-                button.addEventListener('click', showLoserMessage)
+                button.addEventListener('click', showLoserMessage);
             }
-            container.appendChild(button)
+            container.appendChild(button);
         }
     } else {
-        alert('Please enter a valid number greater than 0.')
+        alert('Please enter a valid number greater than 0.');
     }
 }
 
 function showWinnerMessage() {
-    return alert('You won!')
+    return alert('You won!');
 }
 
 function showLoserMessage() {
-    return alert('You lost!')
+    return alert('You lost!');
 }
