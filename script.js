@@ -7,7 +7,6 @@ function generateButtons() {
     const container = document.getElementById('buttonsContainer');
     container.innerHTML = '';
     const winnerNumber = randomNumberInt(1, buttonValue);
-
     if (buttonValue >= 1) {
         for(let i = 1; i <= buttonValue; ++i) {
             let button = createButton(i, winnerNumber, container);
