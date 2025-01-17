@@ -10,30 +10,25 @@ function generateButtons() {
 
     if (buttonValue >= 1) {
         for(let i = 1; i <= buttonValue; ++i) {
-            let button = createButton(i);
-            if (i === winnerNumber) {
-                button.addEventListener('click', showWinnerMessage);
-            } else {
-                button.addEventListener('click', showLoserMessage);
-            }
-            container.appendChild(button);
+            let button = createButton(i, winnerNumber, container);
         }
     } else {
         alert('Please enter a valid number greater than 0.');
     }
 }
 
-function showWinnerMessage() {
-    return alert('You won!');
-}
-
-function showLoserMessage() {
-    return alert('You lost!');
-}
-
-function createButton(buttonNumber) {
+function createButton(buttonNumber, winnerNumber, container) {
     let button = document.createElement('button');
     button.innerText = 'Button number ' + buttonNumber;
     button.classList.add('game-button');
-    return button;
+    if (buttonNumber === winnerNumber) {
+        button.addEventListener('click', () => {
+            alert('Winner button!');
+        });
+    } else {
+        button.addEventListener('click', () => {
+            alert('Looser button!');
+        });
+    }
+    container.appendChild(button);
 }
