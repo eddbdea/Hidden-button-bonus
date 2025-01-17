@@ -10,10 +10,8 @@ function generateButtons() {
 
     if (buttonValue >= 1) {
         for(let i = 1; i <= buttonValue; ++i) {
-            let button = document.createElement('button');
-            button.innerText = 'Button number ' + i;
-            button.classList.add('game-button');
-            if (i == winnerNumber) {
+            let button = createButton(i);
+            if (i === winnerNumber) {
                 button.addEventListener('click', showWinnerMessage);
             } else {
                 button.addEventListener('click', showLoserMessage);
@@ -31,4 +29,11 @@ function showWinnerMessage() {
 
 function showLoserMessage() {
     return alert('You lost!');
+}
+
+function createButton(buttonNumber) {
+    let button = document.createElement('button');
+    button.innerText = 'Button number ' + buttonNumber;
+    button.classList.add('game-button');
+    return button;
 }
